@@ -1,0 +1,16 @@
+<.header>
+  Microposts <%= @microposts.id %>
+  <:subtitle>This is a microposts record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/microposts/#{@microposts}/edit"}>
+      <.button>Edit microposts</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Content"><%= @microposts.content %></:item>
+  <:item title="User"><%= @microposts.user_id %></:item>
+</.list>
+
+<.back navigate={~p"/microposts"}>Back to microposts</.back>

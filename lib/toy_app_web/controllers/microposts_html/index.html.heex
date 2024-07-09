@@ -1,0 +1,24 @@
+<.header>
+  Listing Microposts
+  <:actions>
+    <.link href={~p"/microposts/new"}>
+      <.button>New Microposts</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="microposts" rows={@microposts_collection} row_click={&JS.navigate(~p"/microposts/#{&1}")}>
+  <:col :let={microposts} label="Content"><%= microposts.content %></:col>
+  <:col :let={microposts} label="User"><%= microposts.user_id %></:col>
+  <:action :let={microposts}>
+    <div class="sr-only">
+      <.link navigate={~p"/microposts/#{microposts}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/microposts/#{microposts}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={microposts}>
+    <.link href={~p"/microposts/#{microposts}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

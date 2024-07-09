@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :toy_app, ToyApp.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "asdf123456",
   hostname: "localhost",
   database: "toy_app_dev",
   stacktrace: true,
